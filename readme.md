@@ -33,6 +33,9 @@ and publish the data to `/publish/ `endpoint.
 
 #### NOTE: For performance improvements, when expecting a lot of data to manipulate and messages then We can design the subscriber to use the concept of multiprocessing workers to do job in parallel.
 
+#### NOTE: Pulling routes details to User UI needs to implement as I was out of time to work on this side.
+
+
 ## Environments Variables:
 For the assignment purposes, An `.env` and `.json` files are added in order to use the plug-&-play the configured project and topics but ones can update those variables for sending messages to its own project over Google cloud.
 
