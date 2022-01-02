@@ -1,0 +1,51 @@
+version: '3.7'
+
+services:
+  sqlite3:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./db-data/:/root/db/
+    networks:
+      - backend
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web
+    image: image_web
+    command: bash -c "python3 manage.py collectstatic --noinput && python3 manage.py migrate --noinput && python3 manage.py runserver 0.0.0.0:8000"
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/src
+    ports:
+      - "8000:8000"
+    env_file: .env
+    depends_on:
+      - sqlite3
+    networks:
+      - backend
+
+  subscriber:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: subscriber
+    image: image_subscriber
+    command: bash -c "python3 manage.py shell < subscriber/sub.py"
+    ports:
+      - "8001:8001"
+    depends_on:
+      - sqlite3
+    networks:
+      - backend
+
+volumes:
+  db-data:
+
+networks:
+  backend:
+    driver: bridge

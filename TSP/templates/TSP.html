@@ -1,0 +1,27 @@
+{% load static %}
+<script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script> 
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<header>
+    Travel Saleseman Problem Solution
+</header>
+<body>
+    {% include 'messages.html' %}
+    <form method = "POST" id="tsp-form", action="/publish/">
+        {% csrf_token %}
+        <div>
+            {{ form.no_of_vehicle.label_tag }}
+            {{ form.no_of_vehicle }}
+        </div>
+        <div>
+            {{ form.coordinates.label_tag }}
+            {{ form.coordinates }}
+        </div>
+        <button class="submit-btn" type="submit">Publish</button>
+    </form>
+    <hr> 
+    {% include "routes.html" %}
+</body>
+
+<footer>&copy; Copyright 2021 by Asad Iqbal | https://github.com/asadiqbal08</footer>

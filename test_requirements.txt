@@ -1,0 +1,11 @@
+ddt
+django-debug-toolbar
+faker
+ipdb
+pytest
+pytest-cov
+pytest-env==0.6.2
+pytest-django
+pytest-mock
+pytest-lazy-fixture~=0.6.3
+responses

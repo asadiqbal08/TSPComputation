@@ -1,0 +1,7 @@
+.tox.tox
+.cache
+node_modules
+staticfiles/
+.vscode
+__pycache__
+.git
