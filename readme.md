@@ -37,11 +37,11 @@ and publish the data to `/publish/ `endpoint.
 
 
 ## Environments Variables:
-For the assignment purposes, The `.env` and `.json` files are added here just for a plug-&-play configured version of project and topics but ones can update those variables for sending messages to its own project over Google cloud.
+For the assignment purposes, The `.env` and `.json` files are added with values here just for a plug-&-play configured version for project & topics but ones can update those variables for sending messages to its own project over Google cloud.
 
 For authentication keys visit [authentication](https://cloud.google.com/docs/authentication/getting-started).
 
-Add / Override the following settings in your `.env` file:
+Keep the default ones OR override the following settings in your `.env` file:
 
 ```
 PUB_SUB_TOPIC=
