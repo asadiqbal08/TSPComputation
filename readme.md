@@ -16,7 +16,7 @@ library that communicates through publish/subscribe queues.
 Visit `http://127.0.0.1:8000/` to get the view of Django based application.
 
 ## Design Details
-For this assignment, I used the [google pub/sub](https://cloud.google.com/pubsub/docs/overview) services to communicate asynchronously that actually provides messaging between applications. Cloud Pub/Sub is designed to provide asynchronous messaging between applications. The main application `TSP` worked as Publisher for sending messages to a "topic" queue and on the other hand, another background service named as `subscriber` is used to `pull messages` from `topic` queue to run the solution over the given locations and display the routes over the console (at the moment)
+For the TSP, I used the [google pub/sub](https://cloud.google.com/pubsub/docs/overview) services to communicate asynchronously that actually provides messaging between applications. Cloud Pub/Sub is designed to provide asynchronous messaging between applications. The main application `TSP` worked as Publisher for sending messages to a "topic" queue and on the other hand, another background service named as `subscriber` is used to `pull messages` from `topic` queue to run the solution over the given locations and display the routes over the console (at the moment)
 
 Over the index page of `TSP` application, User is able to specify the following inputs:
 - Number of vehicles.
